@@ -1,0 +1,31 @@
+<div class="col-md-8 offset-md-4">
+    <h3 style="margin-bottom: 20px"> Search Synonym</h3>
+    <form (ngSubmit) = "onSubmit()">
+
+    <div class="row" style="margin-bottom: 20px">
+        <div class="col-md-4">
+            <label> Word</label>
+            <input type="text" class ="form-control" id = "word"
+                [(ngModel)] = "word" name = "word">
+        </div>
+        <div class="col-md-4" style="margin-top: 32px"> 
+            <button class = "btn btn-success" type ="submit" style="margin-left: 20px">Search Synonym</button>
+        </div>
+    </div>
+        <div class="col-md-4">
+            <table class = "table table-striped table-sm" *ngIf="visible">
+                <thead>
+                    <tr>
+                        <th> Synonyms for {{ word }} </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor = "let synonym of syononyms" >
+                        <td> {{ synonym }} </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </form>
+</div>

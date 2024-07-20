@@ -1,0 +1,24 @@
+<div class="col-md-6 offset-md-4">
+    
+    <h3> Synonym List</h3>
+    <div class="col-md-8" style="margin-top: 32px">  
+        <table class = "table table-striped">
+            <thead>
+                <tr>
+                    <th> Word</th>
+                    <th> Synonym </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let synonym of syononyms" >
+                    <td> {{ synonym.synonym1 }} </td>
+                    <td> {{ synonym.synonym2 }} </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+    
+</div>
+
+
