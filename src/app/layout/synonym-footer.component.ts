@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
-import { DatePipe } from "@angular/common";
 
 @Component({
   selector: 'app-synonym-footer',

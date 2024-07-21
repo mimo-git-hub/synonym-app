@@ -19,12 +19,19 @@ export class CreateSynonymComponent implements OnInit {
   }
 
   onSubmit(){
-    this.synonymService.createEmployee(this.synonymEnter).subscribe( data =>{
-      if(data){
-        this.message = "Syononym " + this.synonymEnter.synonym1 + " ~ " + this.synonymEnter.synonym2 + " successfully created!";
-      } 
-    }, 
-    error => console.log(error));
+    if(this.synonymEnter.synonym1 == this.synonymEnter.synonym2){
+      this.message = " There are same words!"
+    } else {
+      this.synonymService.createEmployee(this.synonymEnter).subscribe( data =>{
+        if(data){
+          this.message = "Syononym " + this.synonymEnter.synonym1 + " ~ " + this.synonymEnter.synonym2 + " successfully created!";
+        } else {
+          this.message = "This synonym combination already exists!"
+        }
+      }, 
+      error => console.log(error));
+    }
+    
   }
 
 }
