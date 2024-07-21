@@ -4,8 +4,7 @@ import { SynonymService } from '../synonym.service';
 
 @Component({
   selector: 'app-search-synonym',
-  templateUrl: './search-synonym.component.html',
-  styleUrls: ['./search-synonym.component.css']
+  templateUrl: './search-synonym.component.html'
 })
 export class SearchSynonymComponent implements OnInit {
 

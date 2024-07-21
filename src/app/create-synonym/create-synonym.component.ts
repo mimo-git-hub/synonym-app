@@ -5,8 +5,7 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-synonym',
-  templateUrl: './create-synonym.component.html',
-  styleUrls: ['./create-synonym.component.css']
+  templateUrl: './create-synonym.component.html'
 })
 export class CreateSynonymComponent implements OnInit {
 
@@ -21,7 +20,9 @@ export class CreateSynonymComponent implements OnInit {
 
   onSubmit(){
     this.synonymService.createEmployee(this.synonymEnter).subscribe( data =>{
-      this.message = "Syononym " + this.synonymEnter.synonym1 + " ~ " + this.synonymEnter.synonym2 + " successfully created!";
+      if(data){
+        this.message = "Syononym " + this.synonymEnter.synonym1 + " ~ " + this.synonymEnter.synonym2 + " successfully created!";
+      } 
     }, 
     error => console.log(error));
   }
